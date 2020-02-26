@@ -1,5 +1,5 @@
 //
-//  String+Extension.swift
+//  Fonts.swift
 //  ios-involves
 //
 //  Created by Danilo Pena on 20/02/20.
@@ -8,8 +8,7 @@
 
 import UIKit
 
-extension String {
-    var localized: String {
-        return NSLocalizedString(self, comment: "")
-    }
+enum Fonts {
+    static let futuraBold = "Futura-Bold"
+    static let futuraMedium = "Futura-Medium"
 }

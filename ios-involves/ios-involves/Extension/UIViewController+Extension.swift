@@ -1,6 +1,6 @@
 //
 //  UIViewController+Extension.swift
-//  SampleApp
+//  ios-involves
 //
 //  Created by Danilo Pena on 20/02/20.
 //  Copyright © 2020 Danilo Pena. All rights reserved.
@@ -18,5 +18,11 @@ extension UIViewController {
         self.present(alert, animated: true) {
             completion()
         }
+    }
+    
+    /// Get a list of string segues.
+    func segues() -> [String] {
+        let identifiers = (self.value(forKey: "storyboardSegueTemplates") as? [AnyObject])?.compactMap({ $0.value(forKey: "identifier") as? String }) ?? []
+        return identifiers
     }
 }

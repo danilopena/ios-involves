@@ -88,7 +88,7 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
         </scene>
-        <!--Item 2-->
+        <!--Perfil-->
         <scene sceneID="Phi-mH-6bK">
             <objects>
                 <viewController id="mza-sk-pK1" customClass="WatchingSeriesListController" customModule="ios_involves" customModuleProvider="target" sceneMemberID="viewController">
@@ -110,7 +110,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="5Tv-PL-tyk"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="qCS-DR-N0X"/>
+                    <tabBarItem key="tabBarItem" title="Perfil" image="person.circle" catalog="system" id="qCS-DR-N0X"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hKZ-vd-E2Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -331,7 +331,7 @@
         <scene sceneID="zdc-cj-76v">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="Q2a-1c-BSk" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" id="K10-XP-laC"/>
+                    <tabBarItem key="tabBarItem" title="" image="list.bullet" catalog="system" id="K10-XP-laC"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zQG-sA-JVO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
@@ -348,6 +348,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="list.bullet" catalog="system" width="64" height="44"/>
+        <image name="person.circle" catalog="system" width="64" height="60"/>
         <image name="tiagao" width="200" height="200"/>
     </resources>
 </document>

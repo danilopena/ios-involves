@@ -10,4 +10,7 @@ import UIKit
 
 enum SegueIdentifier {
     static let sendToLoggedArea = "sendToLoggedArea"
+    
+    // Lists
+    static let sendToDetailList = "sendToDetailList"
 }

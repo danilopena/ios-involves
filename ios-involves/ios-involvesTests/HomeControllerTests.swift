@@ -7,6 +7,7 @@
 //
 
 import XCTest
+
 @testable import ios_involves
 
 class HomeControllerTests: XCTestCase {
@@ -17,13 +18,11 @@ class HomeControllerTests: XCTestCase {
     override func setUp() {
         super.setUp()
 
-        // 1.
         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
         controller = vc
         controller.loadViewIfNeeded()
         notificationCenter = NotificationCenter()
     }
-
 
     override func tearDown() {
         notificationCenter = nil
@@ -48,12 +47,10 @@ class HomeControllerTests: XCTestCase {
         let identifiers = controller.segues()
         XCTAssertTrue(identifiers.contains(SegueIdentifier.sendToLoggedArea), "Segue sendToLoggedArea should exist.")
     }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func testIsJamesCircled() {
+        let jamesCornerRadius = controller.jamesPicture.layer.cornerRadius
+        let jamesWidthOrHeight = controller.jamesPicture.frame.width
+        XCTAssertTrue(jamesCornerRadius == jamesWidthOrHeight / 2)
     }
-
 }

@@ -1,0 +1,21 @@
+/* 
+  Localizable.strings
+  ios-involves
+
+  Created by Danilo Pena on 26/02/20.
+  Copyright © 2020 Danilo Pena. All rights reserved.
+*/
+
+/// Title of Controllers
+"list.title"        = "Suas listas";
+"tabBar.list.title" = "Listas";
+
+"list.name"         = "Nome: ";
+"list.showsCount"   = "Número de séries/filmes na lista: ";
+"list.orientation"  = "Aqui você poderá ver todas as suas listas customizadas e também, os detalhes de cada uma.";
+
+"list.detail.name"  = "Nome: ";
+"list.detail.year"  = "Ano: ";
+"list.detail.type"  = "Tipo: ";
+
+

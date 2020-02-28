@@ -14,6 +14,7 @@ protocol SeriesListViewModelDelegate: class {
 }
 
 final class SeriesListViewModel {
+    
     private weak var delegate: SeriesListViewModelDelegate?
     var lists: [TraktList]?
     

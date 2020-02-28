@@ -25,6 +25,12 @@ class HomeViewController: UIViewController {
         setupObservers()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        if TraktManager.sharedManager.isSignedIn {
+            self.performSegue(withIdentifier: SegueIdentifier.sendToLoggedArea, sender: self)
+        }
+    }
+    
     private func setupObservers() {
         NotificationCenter.default.observeOnce(forName: .TraktSignedIn) { [weak self] _ in
             self?.dismiss(animated: true, completion: {

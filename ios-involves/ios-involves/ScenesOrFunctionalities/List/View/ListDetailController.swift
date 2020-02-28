@@ -14,6 +14,7 @@ class ListDetailController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var listToDetail: TraktList!
+    var showIdToDetail: Int!
     private var listDetailViewModel: ListDetailViewModel!
 
     override func viewDidLoad() {
@@ -24,16 +25,14 @@ class ListDetailController: UIViewController {
         navigationItem.title = listToDetail.name
     }
 
-    /*
+    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == SegueIdentifier.sendToDetailShow {
+            (segue.destination as? ShowDetailController)?.showIdToDetail = showIdToDetail
+        }
     }
-    */
-
 }
 
 extension ListDetailController: UITableViewDelegate, UITableViewDataSource {
@@ -42,27 +41,27 @@ extension ListDetailController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellIdentifier) as? ListDetailTableCell
-        if let item = listDetailViewModel.items?[indexPath.row] {
-            cell?.configure(item: item)
+        guard
+            let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellIdentifier) as? ListDetailTableCell,
+            let item = listDetailViewModel.items?[indexPath.row]
+           else {
+            return UITableViewCell()
         }
-        return cell!
+        
+        cell.configure(item: item)
+        return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // Preciso pegar o aired e o completed para calcular quantos % está finalizado.
-        // Além disso, preciso validar para detalhar apenas Shows
         if let item = listDetailViewModel.items?[indexPath.row] {
-            TraktManager.sharedManager.getShowWatchedProgress(showID: "\(item.show?.ids.trakt ?? 0)") { [weak self] (result) in
-                switch result {
-                    case .success(let result):
-                        break
-                    case .error(let error):
-                        break
-                }
+            if let enumType = ItemTypeEnum(rawValue: item.type), enumType == .show {
+                showIdToDetail = item.show?.ids.trakt
+                self.performSegue(withIdentifier: SegueIdentifier.sendToDetailShow, sender: self)
+            } else {
+                alert(message: Localizable.errorUnknown.localized, completion: {})
             }
         }
-        
     }
 }
 
@@ -70,10 +69,14 @@ private extension ListDetailController {
     private enum Constants {
         static let cellIdentifier = "itemCell"
     }
+    
+    private enum Localizable {
+        static let errorUnknown = "error.message.unknown"
+    }
 }
 
 extension ListDetailController: ListDetailViewModelDelegate {
-    func loaded(state: State) {
+    func loaded(status: Status) {
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }

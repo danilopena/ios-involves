@@ -9,16 +9,16 @@
 import UIKit
 import TraktKit
 
-protocol SeriesListViewModelDelegate: class {
-    func loaded(state: State)
+protocol ListViewModelDelegate: class {
+    func loaded(status: Status)
 }
 
-final class SeriesListViewModel {
+final class ListViewModel {
     
-    private weak var delegate: SeriesListViewModelDelegate?
+    private weak var delegate: ListViewModelDelegate?
     var lists: [TraktList]?
     
-    init(delegate: SeriesListViewModelDelegate) {
+    init(delegate: ListViewModelDelegate) {
         self.delegate = delegate
     }
     
@@ -27,9 +27,9 @@ final class SeriesListViewModel {
             switch result {
             case .success(let lists):
                 self?.lists = lists
-                self?.delegate?.loaded(state: .success)
+                self?.delegate?.loaded(status: .success)
             case .error(let error):
-                self?.delegate?.loaded(state: .failed(error: "Failed to get your lists profile: \(String(describing: error?.localizedDescription))"))
+                self?.delegate?.loaded(status: .failed(error: "Failed to get your lists profile: \(String(describing: error?.localizedDescription))"))
             }
         }
     }

@@ -209,16 +209,33 @@
                     <navigationItem key="navigationItem" id="yZf-GB-2iD"/>
                     <connections>
                         <outlet property="tableView" destination="VIK-hJ-sql" id="yzf-gx-mrJ"/>
+                        <segue destination="Tw1-Fa-ZLk" kind="show" identifier="sendToDetailShow" id="3lp-3o-lUD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SLW-2O-zmw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3963.7681159420295" y="-186.16071428571428"/>
         </scene>
-        <!--Series List Controller-->
+        <!--Show Detail Controller-->
+        <scene sceneID="8QK-O2-xeI">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="Tw1-Fa-ZLk" customClass="ShowDetailController" customModule="ios_involves" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="x5u-30-dgi">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="EsT-qV-88g"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Og9-d7-iRW"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lZg-0X-mwU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4871" y="-186"/>
+        </scene>
+        <!--List Controller-->
         <scene sceneID="ddO-N3-0gF">
             <objects>
-                <viewController storyboardIdentifier="SeriesListController" modalPresentationStyle="fullScreen" id="BDg-8u-2WZ" customClass="SeriesListController" customModule="ios_involves" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SeriesListController" modalPresentationStyle="fullScreen" id="BDg-8u-2WZ" customClass="ListController" customModule="ios_involves" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bTk-Eo-Nhg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -301,7 +318,7 @@
                     <connections>
                         <outlet property="orientation" destination="epT-nm-vxM" id="5ys-KE-x93"/>
                         <outlet property="tableView" destination="qy5-8r-iue" id="lq1-fC-YYr"/>
-                        <segue destination="m6V-Ws-mP8" kind="show" identifier="sendToDetailList" id="WhG-4N-Qvl"/>
+                        <segue destination="m6V-Ws-mP8" kind="show" identifier="sendToListItems" id="WhG-4N-Qvl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="325-Qa-QAS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

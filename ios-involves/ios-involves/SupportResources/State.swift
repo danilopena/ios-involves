@@ -1,5 +1,5 @@
 //
-//  State.swift
+//  Status.swift
 //  ios-involves
 //
 //  Created by Danilo Pena on 23/02/20.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum State {
+enum Status {
     case success
     case failed(error: String)
 }

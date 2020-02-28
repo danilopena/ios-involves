@@ -1,22 +1,22 @@
 //
-//  WatchingSeriesListController.swift
+//  ShowDetailController.swift
 //  ios-involves
 //
-//  Created by Danilo Pena on 26/02/20.
+//  Created by Danilo Pena on 28/02/20.
 //  Copyright © 2020 Danilo Pena. All rights reserved.
 //
 
 import UIKit
 
-class WatchingSeriesListController: UIViewController {
+class ShowDetailController: UIViewController {
 
-    var watchingViewModel: WatchingSeriesViewModel!
-
+    private var showDetailViewModel: ShowDetailViewModel!
+    var showIdToDetail: Int!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        watchingViewModel = WatchingSeriesViewModel(delegate: self)
-        watchingViewModel.fetchWatching()
+        
+        showDetailViewModel = ShowDetailViewModel(delegate: self)
+        showDetailViewModel.fetchDetailShow(id: showIdToDetail)
     }
     
 
@@ -29,10 +29,9 @@ class WatchingSeriesListController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }
 
-extension WatchingSeriesListController: WatchingSeriesViewModelDelegate {
+extension ShowDetailController: ShowDetailViewModelDelegate {
     func loaded(status: Status) {
         
     }

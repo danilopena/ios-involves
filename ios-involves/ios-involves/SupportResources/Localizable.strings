@@ -18,4 +18,10 @@
 "list.detail.year"  = "Ano: ";
 "list.detail.type"  = "Tipo: ";
 
+"title.movie"       = "Filme";
+"title.show"        = "Série";
+"title.none"        = "Ainda não reconhecemos esse tipo, no futuro quem sabe?! ;)";
+
+"error.message.unknown" = "Ainda não temos os detalhes além de séries, já estamos trabalhando nisso para melhor atendê-lo.";
+
 

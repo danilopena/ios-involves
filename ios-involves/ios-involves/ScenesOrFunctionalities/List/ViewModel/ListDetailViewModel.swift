@@ -10,7 +10,7 @@ import UIKit
 import TraktKit
 
 protocol ListDetailViewModelDelegate: class {
-    func loaded(state: State)
+    func loaded(status: Status)
 }
 
 final class ListDetailViewModel {
@@ -27,9 +27,9 @@ final class ListDetailViewModel {
             switch result {
             case .success(let items):
                 self?.items = items
-                self?.delegate?.loaded(state: .success)
+                self?.delegate?.loaded(status: .success)
             case .error(let error):
-                self?.delegate?.loaded(state: .failed(error: "Failed to get your lists profile: \(String(describing: error?.localizedDescription))"))
+                self?.delegate?.loaded(status: .failed(error: "Failed to get your lists profile: \(String(describing: error?.localizedDescription))"))
             }
         }
     }

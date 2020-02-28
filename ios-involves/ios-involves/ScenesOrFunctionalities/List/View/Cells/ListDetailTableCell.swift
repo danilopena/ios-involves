@@ -31,10 +31,14 @@ class ListDetailTableCell: UITableViewCell {
             infos = (show.title, show.year)
         }
         
+        guard let enumType = ItemTypeEnum(rawValue: item.type) else {
+            return
+        }
+        
         name.text = Localizable.listDetailName.localized + (infos.0 ?? "")
         year.text = Localizable.listDetailYear.localized + "\(infos.1 ?? 0)"
-        type.text = Localizable.listDetailType.localized + item.type
-        //TO-DO adicionar imagem
+        type.text = Localizable.listDetailType.localized + enumType.localizedTitle()
+        typeIcon.image = enumType.getImage()
     }
 }
 

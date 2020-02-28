@@ -10,7 +10,7 @@ import Foundation
 import TraktKit
 
 protocol WatchingSeriesViewModelDelegate: class {
-    func loaded(state: State)
+    func loaded(status: Status)
 }
 
 final class WatchingSeriesViewModel {
@@ -26,13 +26,13 @@ final class WatchingSeriesViewModel {
         TraktManager.sharedManager.getUserWatching() { [weak self] result in
             switch result {
             case .notCheckedIn:
-                self?.delegate?.loaded(state: .success)
+                self?.delegate?.loaded(status: .success)
                 break
             case .checkedIn(let watching):
                 self?.watching = watching
-                self?.delegate?.loaded(state: .success)
+                self?.delegate?.loaded(status: .success)
             case .error(let error):
-                self?.delegate?.loaded(state: .failed(error: "Failed to get your lists profile: \(String(describing: error?.localizedDescription))"))
+                self?.delegate?.loaded(status: .failed(error: "Failed to get your lists profile: \(String(describing: error?.localizedDescription))"))
             }
         }
     }

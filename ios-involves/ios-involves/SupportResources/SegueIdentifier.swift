@@ -12,5 +12,6 @@ enum SegueIdentifier {
     static let sendToLoggedArea = "sendToLoggedArea"
     
     // Lists
-    static let sendToDetailList = "sendToDetailList"
+    static let sendToListItems  = "sendToListItems"
+    static let sendToDetailShow = "sendToDetailShow"
 }

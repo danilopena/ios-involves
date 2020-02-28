@@ -9,19 +9,19 @@
 import UIKit
 import TraktKit
 
-class SeriesListController: UIViewController {
+class ListController: UIViewController {
 
     @IBOutlet weak var tableView:   UITableView!
     @IBOutlet weak var orientation: UILabel!
     
-    private var seriesListViewModel: SeriesListViewModel!
+    private var listViewModel: ListViewModel!
     var indexOfSelectedList: Int!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        seriesListViewModel  = SeriesListViewModel(delegate: self)
-        seriesListViewModel.fetchLists()
+        listViewModel  = ListViewModel(delegate: self)
+        listViewModel.fetchLists()
         
         setup()
     }
@@ -31,21 +31,19 @@ class SeriesListController: UIViewController {
         navigationController?.tabBarItem.title = Localizable.tabBarTitle.localized
         orientation.text = Localizable.orientationList.localized
     }
-    
-
 
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == SegueIdentifier.sendToDetailList {
-            if let list = seriesListViewModel.lists?[indexOfSelectedList] {
+        if segue.identifier == SegueIdentifier.sendToListItems {
+            if let list = listViewModel.lists?[indexOfSelectedList] {
                 (segue.destination as? ListDetailController)?.listToDetail = list
             }
         }
     }
 }
 
-private extension SeriesListController {
+private extension ListController {
     private enum Constants {
         static let cellIdenfier    = "listCell"
     }
@@ -57,28 +55,30 @@ private extension SeriesListController {
     }
 }
 
-extension SeriesListController: UITableViewDataSource, UITableViewDelegate {
+extension ListController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return seriesListViewModel.lists?.count ?? 0
+        return listViewModel.lists?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellIdenfier) as? ListTableCell
-        if let list = seriesListViewModel.lists?[indexPath.row] {
-            cell?.configure(list: list)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellIdenfier) as? ListTableCell,
+              let list = listViewModel.lists?[indexPath.row] else {
+                return UITableViewCell()
         }
-        return cell!
+            
+        cell.configure(list: list)
+        return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         indexOfSelectedList = indexPath.row
-        performSegue(withIdentifier: SegueIdentifier.sendToDetailList, sender: self)
+        performSegue(withIdentifier: SegueIdentifier.sendToListItems, sender: self)
     }
 }
 
-extension SeriesListController: SeriesListViewModelDelegate {
-    func loaded(state: State) {
-        switch state {
+extension ListController: ListViewModelDelegate {
+    func loaded(status: Status) {
+        switch status {
         case .success:
             DispatchQueue.main.async {
                 self.tableView.reloadData()

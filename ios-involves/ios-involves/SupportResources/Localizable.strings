@@ -8,6 +8,7 @@
 
 /// Title of Controllers
 "list.title"        = "Suas listas";
+"show.title"        = "Detalhes da série";
 "tabBar.list.title" = "Listas";
 
 "list.name"         = "Nome: ";
@@ -18,9 +19,18 @@
 "list.detail.year"  = "Ano: ";
 "list.detail.type"  = "Tipo: ";
 
+// Item
 "title.movie"       = "Filme";
 "title.show"        = "Série";
 "title.none"        = "Ainda não reconhecemos esse tipo, no futuro quem sabe?! ;)";
+
+// Show
+"show.detail.season"  = " Temporada(s)";
+"show.detail.watched" = " assistido";
+"show.detail.nextEpisodeOrientation" = "Veja só as informações do próximo episódio";
+"show.detail.lastEpisodeOrientation" = "Veja só as informações do último episódio";
+
+// Errors
 
 "error.message.unknown" = "Ainda não temos os detalhes além de séries, já estamos trabalhando nisso para melhor atendê-lo.";
 

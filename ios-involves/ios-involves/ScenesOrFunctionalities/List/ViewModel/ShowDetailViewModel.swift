@@ -9,15 +9,22 @@
 import UIKit
 import TraktKit
 
+protocol StatusDelegate: class {
+    func loaded(status: Status)
+}
+
 protocol ShowDetailViewModelDelegate: class {
     func loaded(status: Status)
+    func loadedNextEpisode(status: Status)
 }
 
 final class ShowDetailViewModel {
 
     private weak var delegate: ShowDetailViewModelDelegate?
-    var show: TraktShowWatchedProgress!
-    
+    var show:        TraktShowWatchedProgress!
+    var nextEpisode: TraktEpisode!
+    var lastEpisode: TraktEpisode!
+
     init(delegate: ShowDetailViewModelDelegate) {
         self.delegate = delegate
     }
@@ -34,5 +41,33 @@ final class ShowDetailViewModel {
                     break
             }
         }
+    }
+    
+    func fetchNextEpisode(id: Int) {
+        TraktManager.sharedManager.getNextEpisode(showID: "\(id)", extended: [ExtendedType.Full]) { [weak self] (result) in
+            switch result {
+                case .success(let result):
+                    self?.nextEpisode = result
+                    self?.delegate?.loadedNextEpisode(status: .success)
+                    break
+                case .error( _):
+                    TraktManager.sharedManager.getLastEpisode(showID: "\(id)", extended: [ExtendedType.Full]) { (result) in
+                        switch result {
+                            case .success(let result):
+                                self?.lastEpisode = result
+                                self?.delegate?.loadedNextEpisode(status: .success)
+                                break
+                            case .error(let error):
+                                self?.delegate?.loaded(status: .failed(error: "Failed to get your lists profile: \(String(describing: error?.localizedDescription))"))
+                                break
+                        }
+                    }
+                    break
+            }
+        }
+    }
+    
+    func makePercentageWatchedCalc() -> String {
+        return "\((show.completed * 100) / show.aired)" + "%"
     }
 }

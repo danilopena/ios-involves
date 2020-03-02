@@ -18,8 +18,8 @@ class HomeControllerTests: XCTestCase {
     override func setUp() {
         super.setUp()
 
-        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
-        controller = vc
+        controller = setupController(storyboardName: "Main", identifier: ControllerIdentifier.homeViewController)
+
         controller.loadViewIfNeeded()
         notificationCenter = NotificationCenter()
     }
@@ -28,7 +28,7 @@ class HomeControllerTests: XCTestCase {
         notificationCenter = nil
         controller = nil
     }
-
+    
     func testNotificationReceived() {
         let expect = expectation(description: "Should receive notification")
 

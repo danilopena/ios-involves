@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Home View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="HomeViewController" id="BYZ-38-t0r" customClass="HomeViewController" customModule="ios_involves" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jxc-Qc-Hie" customClass="RoundedButton" customModule="ios_involves" customModuleProvider="target">
+                                <rect key="frame" x="77" y="423" width="260" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="6np-7Z-Q4Y"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="260" id="QpM-3h-9q9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="19"/>
+                                <state key="normal" title="Faça o login e let it go!">
+                                    <color key="titleColor" red="0.17254901960784313" green="0.73725490196078436" blue="0.9137254901960784" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="presentLogIn" destination="BYZ-38-t0r" eventType="touchUpInside" id="ckY-g2-e4x"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hDZ-YK-jPm">
+                                <rect key="frame" x="16" y="312.5" width="382" height="70.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70.5" id="qkJ-tE-u1o"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment content="Fala ">
+                                        <attributes>
+                                            <font key="NSFont" size="18" name="Futura-Medium"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="Tiago">
+                                        <attributes>
+                                            <font key="NSFont" size="18" name="Futura-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=", seus problemas acabaram!  Tudo sobre suas séries em apenas um lugar, fácil e rápido. Vamos lá?!">
+                                        <attributes>
+                                            <font key="NSFont" size="18" name="Futura-Medium"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="tiagao" translatesAutoresizingMaskIntoConstraints="NO" id="Knl-l8-F9G">
+                                <rect key="frame" x="107" y="84" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="4hr-BG-GIa"/>
+                                    <constraint firstAttribute="width" constant="200" id="pyE-DF-qDA"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="hDZ-YK-jPm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="1lH-B9-kCR"/>
+                            <constraint firstItem="Jxc-Qc-Hie" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="EyO-QX-8Rv"/>
+                            <constraint firstAttribute="trailing" secondItem="hDZ-YK-jPm" secondAttribute="trailing" constant="16" id="Lha-gG-CPK"/>
+                            <constraint firstItem="Jxc-Qc-Hie" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MfO-9e-3nm"/>
+                            <constraint firstItem="hDZ-YK-jPm" firstAttribute="top" secondItem="Knl-l8-F9G" secondAttribute="bottom" constant="28.5" id="cC6-Ia-WG1"/>
+                            <constraint firstItem="Knl-l8-F9G" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cYb-k2-n55"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Jxc-Qc-Hie" secondAttribute="bottom" constant="16" id="laJ-Ki-NLm"/>
+                            <constraint firstItem="Jxc-Qc-Hie" firstAttribute="top" secondItem="hDZ-YK-jPm" secondAttribute="bottom" constant="40" id="vIb-QA-w9b"/>
+                            <constraint firstItem="Knl-l8-F9G" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="yFa-xE-Tfz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="buttonSignIn" destination="Jxc-Qc-Hie" id="lj6-oZ-hV6"/>
+                        <outlet property="jamesPicture" destination="Knl-l8-F9G" id="gas-Hb-eUq"/>
+                        <segue destination="33m-Qk-mje" kind="show" identifier="sendToLoggedArea" id="o1P-vp-kdT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
+        </scene>
+        <!--Perfil-->
+        <scene sceneID="Phi-mH-6bK">
+            <objects>
+                <viewController id="mza-sk-pK1" customClass="WatchingSeriesListController" customModule="ios_involves" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uuL-X2-ZfK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Perfil" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wd5-yA-Dbn">
+                                <rect key="frame" x="187" y="410.5" width="40" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Wd5-yA-Dbn" firstAttribute="centerX" secondItem="uuL-X2-ZfK" secondAttribute="centerX" id="avf-El-EN6"/>
+                            <constraint firstItem="Wd5-yA-Dbn" firstAttribute="centerY" secondItem="uuL-X2-ZfK" secondAttribute="centerY" id="nJ9-Sy-fdk"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="5Tv-PL-tyk"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Perfil" image="person.circle" catalog="system" id="qCS-DR-N0X"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hKZ-vd-E2Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2161" y="462"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="vVl-eC-F1z">
+            <objects>
+                <tabBarController modalPresentationStyle="fullScreen" id="33m-Qk-mje" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="2Ty-bO-j06"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nOG-bG-bwU">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="I1E-lM-3Ut" kind="relationship" relationship="viewControllers" id="7Jf-JP-XNh"/>
+                        <segue destination="mza-sk-pK1" kind="relationship" relationship="viewControllers" id="SrY-QJ-0hL"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yrb-fg-PhU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1242" y="138"/>
+        </scene>
+        <!--List-->
+        <scene sceneID="Nmm-Jh-4YN">
+            <objects>
+                <viewControllerPlaceholder storyboardName="List" id="I1E-lM-3Ut" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="eXC-wA-l4i"/>
+                    <navigationItem key="navigationItem" id="CZ5-ff-vaj"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BpJ-mG-B6T" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2162" y="-89"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="person.circle" catalog="system" width="64" height="60"/>
+        <image name="tiagao" width="200" height="200"/>
+    </resources>
+</document>

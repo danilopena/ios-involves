@@ -14,7 +14,7 @@ class ListDetailController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var listToDetail: TraktList!
-    var showIdToDetail: Int!
+    var showIndexToDetail: Int!
     private var listDetailViewModel: ListDetailViewModel!
 
     override func viewDidLoad() {
@@ -23,6 +23,7 @@ class ListDetailController: UIViewController {
         listDetailViewModel = ListDetailViewModel(delegate: self)
         listDetailViewModel.fetchListDetail(list: listToDetail)
         navigationItem.title = listToDetail.name
+        tableView.tableFooterView = UITableViewHeaderFooterView()
     }
 
     
@@ -30,7 +31,9 @@ class ListDetailController: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == SegueIdentifier.sendToDetailShow {
-            (segue.destination as? ShowDetailController)?.showIdToDetail = showIdToDetail
+            if let show = listDetailViewModel.items?[showIndexToDetail].show {
+                (segue.destination as? ShowDetailController)?.showToDetail = show
+            }
         }
     }
 }
@@ -56,7 +59,7 @@ extension ListDetailController: UITableViewDelegate, UITableViewDataSource {
         // Preciso pegar o aired e o completed para calcular quantos % está finalizado.
         if let item = listDetailViewModel.items?[indexPath.row] {
             if let enumType = ItemTypeEnum(rawValue: item.type), enumType == .show {
-                showIdToDetail = item.show?.ids.trakt
+                showIndexToDetail = indexPath.row
                 self.performSegue(withIdentifier: SegueIdentifier.sendToDetailShow, sender: self)
             } else {
                 alert(message: Localizable.errorUnknown.localized, completion: {})
@@ -75,7 +78,7 @@ private extension ListDetailController {
     }
 }
 
-extension ListDetailController: ListDetailViewModelDelegate {
+extension ListDetailController: StatusDelegate {
     func loaded(status: Status) {
         DispatchQueue.main.async {
             self.tableView.reloadData()

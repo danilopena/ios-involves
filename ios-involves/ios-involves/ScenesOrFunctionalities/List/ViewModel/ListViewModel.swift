@@ -9,16 +9,13 @@
 import UIKit
 import TraktKit
 
-protocol ListViewModelDelegate: class {
-    func loaded(status: Status)
-}
 
 final class ListViewModel {
     
-    private weak var delegate: ListViewModelDelegate?
+    private weak var delegate: StatusDelegate?
     var lists: [TraktList]?
     
-    init(delegate: ListViewModelDelegate) {
+    init(delegate: StatusDelegate) {
         self.delegate = delegate
     }
     

@@ -29,11 +29,11 @@ class ListController: UIViewController {
     func setup () {
         navigationItem.title = Localizable.controllerTitle.localized
         navigationController?.tabBarItem.title = Localizable.tabBarTitle.localized
+        tableView.tableFooterView = UITableViewHeaderFooterView()
         orientation.text = Localizable.orientationList.localized
     }
 
     // MARK: - Navigation
-
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == SegueIdentifier.sendToListItems {
             if let list = listViewModel.lists?[indexOfSelectedList] {
@@ -76,7 +76,7 @@ extension ListController: UITableViewDataSource, UITableViewDelegate {
     }
 }
 
-extension ListController: ListViewModelDelegate {
+extension ListController: StatusDelegate {
     func loaded(status: Status) {
         switch status {
         case .success:

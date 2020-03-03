@@ -22,7 +22,6 @@ class ListDetailController: UIViewController {
     // -------------      -------------
     
     var listToDetail: TraktList!
-    
     var showIndexToDetail: Int!
     private var listDetailViewModel: ListDetailViewModel!
 
@@ -75,13 +74,12 @@ extension ListDetailController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // Preciso pegar o aired e o completed para calcular quantos % está finalizado.
         if let item = listDetailViewModel.items?[indexPath.row] {
             if let enumType = ItemTypeEnum(rawValue: item.type), enumType == .show {
                 showIndexToDetail = indexPath.row
                 self.performSegue(withIdentifier: SegueIdentifier.sendToDetailShow, sender: self)
             } else {
-                alert(message: Localizable.errorUnknown.localized, completion: {})
+                alert(message: listDetailViewModel.errorUnknownString, completion: {})
             }
         }
     }
@@ -90,10 +88,6 @@ extension ListDetailController: UITableViewDelegate, UITableViewDataSource {
 private extension ListDetailController {
     private enum Constants {
         static let cellIdentifier = "itemCell"
-    }
-    
-    private enum Localizable {
-        static let errorUnknown = "error.message.unknown"
     }
 }
 

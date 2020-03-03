@@ -17,7 +17,7 @@ class ListController: UIViewController {
     // -------------      -------------
 
     @IBOutlet weak var tableView:   UITableView!
-    @IBOutlet weak var orientation: UILabel!
+    @IBOutlet private weak var orientation: UILabel!
     
     // -------------      -------------
     // MARK: Variables

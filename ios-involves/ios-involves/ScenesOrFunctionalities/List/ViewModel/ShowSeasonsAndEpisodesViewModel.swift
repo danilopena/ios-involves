@@ -66,6 +66,22 @@ class ShowSeasonsAndEpisodesViewModel: NSObject {
     }
 }
 
+extension ShowSeasonsAndEpisodesViewModel {
+    enum Localizable {
+        static let controllerTitle   = "seasonsAndEpisodes.title"
+        static let season            = "seasonsAndEpisodes.season"
+    }
+    
+    var controllerTitleString: String {
+        return Localizable.controllerTitle.localized
+    }
+    
+    var seasonString: String {
+        return Localizable.season.localized
+    }
+}
+
+
 extension Encodable {
   func asDictionary() throws -> [String: Any] {
     let data = try JSONEncoder().encode(self)

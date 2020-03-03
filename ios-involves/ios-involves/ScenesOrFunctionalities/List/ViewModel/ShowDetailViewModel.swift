@@ -92,3 +92,48 @@ final class ShowDetailViewModel {
         return dateFormatterPrint.string(from: date)
     }
 }
+
+extension ShowDetailViewModel {
+    enum Localizable {
+        static let controllerTitle    = "show.title"
+        static let showDetailName     = "list.detail.name"
+        static let showDetailYear     = "list.detail.year"
+        static let showDetailSeason   = "show.detail.season"
+        static let showDetailWatched  = "show.detail.watched"
+        static let nextEpisodeOrientation = "show.detail.nextEpisodeOrientation"
+        static let lastEpisodeOrientation = "show.detail.lastEpisodeOrientation"
+        static let seasonsAndEpisodes = "list.detail.seasonsAndEpisodes"
+    }
+    
+    var controllerTitleString: String {
+        return Localizable.controllerTitle.localized
+    }
+    
+    var showDetailNameString: String {
+        return Localizable.showDetailName.localized
+    }
+    
+    var showDetailYearString: String {
+        return Localizable.showDetailYear.localized
+    }
+    
+    var showDetailSeasonString: String {
+        return Localizable.showDetailSeason.localized
+    }
+    
+    var showDetailWatchedString: String {
+        return Localizable.showDetailWatched.localized
+    }
+    
+    var nextEpisodeOrientationString: String {
+        return Localizable.nextEpisodeOrientation.localized
+    }
+    
+    var lastEpisodeOrientationString: String {
+        return Localizable.lastEpisodeOrientation.localized
+    }
+    
+    var seasonsAndEpisodesString: String {
+        return Localizable.seasonsAndEpisodes.localized
+    }
+}

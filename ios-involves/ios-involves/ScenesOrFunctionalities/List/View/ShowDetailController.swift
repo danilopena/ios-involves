@@ -16,23 +16,19 @@ class ShowDetailController: UIViewController {
     // -------------      -------------
     
     /// General informations
-    @IBOutlet weak var name:              UILabel!
-    @IBOutlet weak var year:              UILabel!
-    @IBOutlet weak var numberOfSeasons:   UILabel!
-    @IBOutlet weak var percentageWatched: UILabel!
-    @IBOutlet weak var seasonAndEpisodes: RoundedButton! {
-        didSet {
-            seasonAndEpisodes.setTitle(Localizable.seasonsAndEpisodes.localized, for: .normal)
-        }
-    }
-    @IBOutlet weak var separatorView:     UIView!
+    @IBOutlet private weak var name:              UILabel!
+    @IBOutlet private weak var year:              UILabel!
+    @IBOutlet private weak var numberOfSeasons:   UILabel!
+    @IBOutlet private weak var percentageWatched: UILabel!
+    @IBOutlet private weak var seasonAndEpisodes: RoundedButton!
+    @IBOutlet private weak var separatorView:     UIView!
     
     /// Next/Last episode informations
-    @IBOutlet weak var orientationEpisode: UILabel!
-    @IBOutlet weak var episodeTitle:       UILabel!
-    @IBOutlet weak var episodeDate:        UILabel!
-    @IBOutlet weak var episodeOverview:    UITextView!
-    @IBOutlet weak var episodeActivityIndicator: UIActivityIndicatorView!
+    @IBOutlet private weak var orientationEpisode: UILabel!
+    @IBOutlet private weak var episodeTitle:       UILabel!
+    @IBOutlet private weak var episodeDate:        UILabel!
+    @IBOutlet private weak var episodeOverview:    UITextView!
+    @IBOutlet private weak var episodeActivityIndicator: UIActivityIndicatorView!
     
     // -------------      -------------
     // MARK: Variables
@@ -49,6 +45,10 @@ class ShowDetailController: UIViewController {
         super.viewDidLoad()
                 
         showDetailViewModel = ShowDetailViewModel(delegate: self)
+        seasonAndEpisodes.setTitle(showDetailViewModel.seasonsAndEpisodesString, for: .normal)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         showDetailViewModel.fetchDetailShow(id: showToDetail.ids.trakt)
         showDetailViewModel.fetchNextEpisode(id: showToDetail.ids.trakt)
     }
@@ -59,16 +59,16 @@ class ShowDetailController: UIViewController {
     
     /// This method will present general informations of the show 
     func setup() {
-        navigationItem.title = Localizable.controllerTitle.localized
+        navigationItem.title = showDetailViewModel.controllerTitleString
         separatorView.backgroundColor = Color.purple
         orientationEpisode.textColor = Color.purple
         
         // Show infos
-        name.text = Localizable.showDetailName.localized + showToDetail.title
-        year.text = Localizable.showDetailYear.localized + "\(showToDetail.year ?? 0)"
-        numberOfSeasons.text = "\(showDetailViewModel.show.seasons.count)" + Localizable.showDetailSeason.localized
+        name.text = showDetailViewModel.showDetailNameString + showToDetail.title
+        year.text = showDetailViewModel.showDetailYearString + "\(showToDetail.year ?? 0)"
+        numberOfSeasons.text = "\(showDetailViewModel.show.seasons.count)" + showDetailViewModel.showDetailSeasonString
         
-        percentageWatched.text = showDetailViewModel.makePercentageWatchedCalc() + Localizable.showDetailWatched.localized
+        percentageWatched.text = showDetailViewModel.makePercentageWatchedCalc() + showDetailViewModel.showDetailWatchedString
     }
     
     /// This method will verify if has next episode. if true, will present the next episode if false, will present the last episode.
@@ -77,10 +77,10 @@ class ShowDetailController: UIViewController {
         var episode: TraktEpisode!
         if showDetailViewModel.nextEpisode != nil {
             episode = showDetailViewModel.nextEpisode
-            orientationEpisode.text = Localizable.nextEpisodeOrientation.localized
+            orientationEpisode.text = showDetailViewModel.nextEpisodeOrientationString
         } else if showDetailViewModel.lastEpisode != nil {
             episode = showDetailViewModel.lastEpisode
-            orientationEpisode.text = Localizable.lastEpisodeOrientation.localized
+            orientationEpisode.text = showDetailViewModel.lastEpisodeOrientationString
         }
         
         episodeTitle.text = episode.title
@@ -104,19 +104,6 @@ class ShowDetailController: UIViewController {
             destination?.showProgress = showDetailViewModel.show
             destination?.showToDetail = showToDetail
         }
-    }
-}
-
-extension ShowDetailController {
-    private enum Localizable {
-        static let controllerTitle    = "show.title"
-        static let showDetailName     = "list.detail.name"
-        static let showDetailYear     = "list.detail.year"
-        static let showDetailSeason   = "show.detail.season"
-        static let showDetailWatched  = "show.detail.watched"
-        static let nextEpisodeOrientation = "show.detail.nextEpisodeOrientation"
-        static let lastEpisodeOrientation = "show.detail.lastEpisodeOrientation"
-        static let seasonsAndEpisodes = "list.detail.seasonsAndEpisodes"
     }
 }
 

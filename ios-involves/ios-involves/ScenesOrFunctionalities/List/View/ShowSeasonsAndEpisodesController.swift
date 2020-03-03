@@ -15,13 +15,25 @@ protocol ShowSeasonsAndEpisodesControllerDelegate {
 }
 
 class ShowSeasonsAndEpisodesController: UIViewController {
-
+    
+    // -------------      -------------
+    // MARK: IBOutlets
+    // -------------      -------------
+    
     @IBOutlet weak var tableView: UITableView!
+    
+    // -------------      -------------
+    // MARK: Variables
+    // -------------      -------------
     
     var showToDetail: TraktShow!
     var showProgress: TraktShowWatchedProgress!
     var showSeasonsAndEpisodesViewModel: ShowSeasonsAndEpisodesViewModel!
 
+    // -------------      -------------
+    // MARK: Native Functions
+    // -------------      -------------
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,19 +41,18 @@ class ShowSeasonsAndEpisodesController: UIViewController {
         showSeasonsAndEpisodesViewModel = ShowSeasonsAndEpisodesViewModel(delegate: self)
     }
     
+    // -------------      -------------
+    // MARK: Auxiliar Functions
+    // -------------      -------------
+    
     func setup() {
-        navigationItem.title = Localizable.controllerTitle.localized
+        navigationItem.title = showSeasonsAndEpisodesViewModel.controllerTitleString
     }
 }
 
 extension ShowSeasonsAndEpisodesController {
     private enum Constants {
         static let cellIdentifier = "episodeCell"
-    }
-    
-    private enum Localizable {
-        static let controllerTitle   = "seasonsAndEpisodes.title"
-        static let season            = "seasonsAndEpisodes.season"
     }
 }
 
@@ -52,7 +63,7 @@ extension ShowSeasonsAndEpisodesController: UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return Localizable.season.localized + " \(section + 1)"
+        return showSeasonsAndEpisodesViewModel.seasonString + " \(section + 1)"
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -30,3 +30,13 @@ final class ListDetailViewModel {
         }
     }
 }
+extension ListDetailViewModel {
+    enum Localizable {
+        static let errorUnknown = "error.message.unknown"
+    }
+    
+    var errorUnknownString: String {
+        return Localizable.errorUnknown.localized
+    }
+}
+

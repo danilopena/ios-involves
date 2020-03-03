@@ -14,6 +14,8 @@
 		7121B751240E8192002FFCC0 /* ShowDetailControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7121B750240E8192002FFCC0 /* ShowDetailControllerTests.swift */; };
 		7121B753240E8833002FFCC0 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7121B752240E8833002FFCC0 /* UIButton+Extension.swift */; };
 		7121B755240E8AC1002FFCC0 /* ShowDetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7121B754240E8AC1002FFCC0 /* ShowDetailViewModelTests.swift */; };
+		7121B757240E935A002FFCC0 /* ShowSeasonsAndEpisodesControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7121B756240E935A002FFCC0 /* ShowSeasonsAndEpisodesControllerTests.swift */; };
+		7121B759240E94B4002FFCC0 /* ShowSeasonsAndEpisodesViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7121B758240E94B4002FFCC0 /* ShowSeasonsAndEpisodesViewModelTests.swift */; };
 		714E1F932406CA8A008B52DF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 714E1F922406CA8A008B52DF /* Localizable.strings */; };
 		714E1F962406CF3E008B52DF /* WatchingSeriesListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714E1F952406CF3E008B52DF /* WatchingSeriesListController.swift */; };
 		714E1F9A2406CF5C008B52DF /* WatchingSeriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714E1F992406CF5C008B52DF /* WatchingSeriesViewModel.swift */; };
@@ -85,6 +87,8 @@
 		7121B750240E8192002FFCC0 /* ShowDetailControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDetailControllerTests.swift; sourceTree = "<group>"; };
 		7121B752240E8833002FFCC0 /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		7121B754240E8AC1002FFCC0 /* ShowDetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDetailViewModelTests.swift; sourceTree = "<group>"; };
+		7121B756240E935A002FFCC0 /* ShowSeasonsAndEpisodesControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowSeasonsAndEpisodesControllerTests.swift; sourceTree = "<group>"; };
+		7121B758240E94B4002FFCC0 /* ShowSeasonsAndEpisodesViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowSeasonsAndEpisodesViewModelTests.swift; sourceTree = "<group>"; };
 		714E1F922406CA8A008B52DF /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		714E1F952406CF3E008B52DF /* WatchingSeriesListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchingSeriesListController.swift; sourceTree = "<group>"; };
 		714E1F992406CF5C008B52DF /* WatchingSeriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchingSeriesViewModel.swift; sourceTree = "<group>"; };
@@ -183,6 +187,7 @@
 				7121B742240D87B9002FFCC0 /* ListViewModelTests.swift */,
 				7121B74C240E7221002FFCC0 /* ListDetailViewModelTests.swift */,
 				7121B754240E8AC1002FFCC0 /* ShowDetailViewModelTests.swift */,
+				7121B758240E94B4002FFCC0 /* ShowSeasonsAndEpisodesViewModelTests.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -432,6 +437,7 @@
 				71D9691624089A66005EC0A5 /* ListControllerTests.swift */,
 				7121B74A240D8CB3002FFCC0 /* ListDetailControllerTests.swift */,
 				7121B750240E8192002FFCC0 /* ShowDetailControllerTests.swift */,
+				7121B756240E935A002FFCC0 /* ShowSeasonsAndEpisodesControllerTests.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -658,10 +664,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				71D96923240950E5005EC0A5 /* ControllerIdentifier.swift in Sources */,
+				7121B759240E94B4002FFCC0 /* ShowSeasonsAndEpisodesViewModelTests.swift in Sources */,
 				71D9692B240D2676005EC0A5 /* ColorTests.swift in Sources */,
 				7121B751240E8192002FFCC0 /* ShowDetailControllerTests.swift in Sources */,
 				71D9692C240D26AF005EC0A5 /* Color.swift in Sources */,
 				71D9691724089A66005EC0A5 /* ListControllerTests.swift in Sources */,
+				7121B757240E935A002FFCC0 /* ShowSeasonsAndEpisodesControllerTests.swift in Sources */,
 				7121B753240E8833002FFCC0 /* UIButton+Extension.swift in Sources */,
 				7121B755240E8AC1002FFCC0 /* ShowDetailViewModelTests.swift in Sources */,
 				71D81DC0240419B3003ACFCA /* HomeControllerTests.swift in Sources */,

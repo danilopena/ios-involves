@@ -13,4 +13,6 @@ enum ControllerIdentifier {
     static let listController           = "ListController"
     static let listDetailController     = "ListDetailController"
     static let showDetailController     = "ShowDetailController"
+    static let showSeasonsAndEpisodesController = "ShowSeasonsAndEpisodesController"
+
 }

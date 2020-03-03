@@ -22,6 +22,7 @@ class ShowSeasonsAndEpisodesViewModel: NSObject {
     }
     
     func watch(episodeNumber: Int, seasonNumber: Int) {
+        /// First we need episode summary to pass him in addToHistory.
         TraktManager.sharedManager.getEpisodeSummary(
                                         showID: "\(show.ids.trakt)",
                                         seasonNumber: NSNumber(value: seasonNumber),
@@ -36,7 +37,6 @@ class ShowSeasonsAndEpisodesViewModel: NSObject {
                                     self?.delegate?.loaded(status: .success)
                                     break
                                 case .fail:                self?.delegate?.loaded(status: .failed(error: "Failed to watch"))
-
                                     break
                             }
                         }

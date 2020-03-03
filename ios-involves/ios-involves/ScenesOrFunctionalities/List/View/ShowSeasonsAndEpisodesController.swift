@@ -37,8 +37,8 @@ class ShowSeasonsAndEpisodesController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setup()
         showSeasonsAndEpisodesViewModel = ShowSeasonsAndEpisodesViewModel(delegate: self)
+        setup()
     }
     
     // -------------      -------------
@@ -87,6 +87,8 @@ extension ShowSeasonsAndEpisodesController: UITableViewDelegate, UITableViewData
 }
 
 extension ShowSeasonsAndEpisodesController: ShowSeasonsAndEpisodesControllerDelegate {
+    
+    /// After add episode to history we need atualize showProgress
     func atualizeShowProgressStatus() {
         showSeasonsAndEpisodesViewModel.fetchDetailShow(id: showToDetail.ids.trakt)
     }

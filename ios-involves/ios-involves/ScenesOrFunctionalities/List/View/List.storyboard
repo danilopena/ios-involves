@@ -291,7 +291,7 @@
         <!--Show Seasons And Episodes Controller-->
         <scene sceneID="g7G-Vu-3r6">
             <objects>
-                <viewController id="wOV-6A-QY7" customClass="ShowSeasonsAndEpisodesController" customModule="ios_involves" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ShowSeasonsAndEpisodesController" id="wOV-6A-QY7" customClass="ShowSeasonsAndEpisodesController" customModule="ios_involves" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Q3U-8V-Csa">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

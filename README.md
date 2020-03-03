@@ -14,16 +14,21 @@ As instruções para uso do projeto são muitos simples. Foi escolhido o cocoapo
 # Checklist funcionalidades
 
   - **Uma lista das séries que ele está assistindo no momento** ✅
+        
         Obs: após o login, todas as listas do usuário são retornadas e você poderá navegar nos itens dentro da mesma.
-  - **A informação de quantos por cento da séria já foi concluída** ✅
+  - **A informação de quantos por cento da série já foi concluída** ✅
+        
         Dando continuidade à navegação, após selecionar a série que deseja, no detalhamento algumas informações serão apresentadas:
             - Porcentagem concluída, quantidade de temporadas, ano de lançamento da séries e nome.
   - **Qual o próximo episódio (e a data)** ✅
+        
         Ainda na tela de detalhamento de uma série, é verificado se possui próximo episódio, caso sim. Será apresentado o título, a data e uma pequena descrição. Caso não, as informações do último episódio são solicitadas.
   - **Uma página com as informações dos episódios (só dos próximos, só do último ou de todos fica a seu critério)** ✅
+        
         Consta a informação do próximo ou do último no detalhamento de uma série.
   - **Marcar como assistido um episódio** ✅
-        Para marcar como lido, na tela de detalhamento, selecione o botão **Temporadas e episódios** e será redirecionado para uma listagem de temporada se episódios, onde basta responder a pergunta **Já assistiu?** que você estará marcando como assistido.
+       
+       Para marcar como lido, na tela de detalhamento, selecione o botão **Temporadas e episódios** e será redirecionado para uma listagem de temporada se episódios, onde basta responder a pergunta **Já assistiu?** que você estará marcando como assistido.
 
 # Arquitetura
 

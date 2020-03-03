@@ -12,12 +12,20 @@ import SafariServices
 
 class HomeViewController: UIViewController {
 
+    // -------------      -------------
+    // MARK: IBOutlets
+    // -------------      -------------
+    
     @IBOutlet weak var buttonSignIn: RoundedButton!
     @IBOutlet weak var jamesPicture: UIImageView! {
         didSet {
             jamesPicture.makeCircle()
         }
     }
+    
+    // -------------      -------------
+    // MARK: Native Functions
+    // -------------      -------------
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +39,11 @@ class HomeViewController: UIViewController {
         }
     }
     
+    // -------------      -------------
+    // MARK: Auxiliar Functions
+    // -------------      -------------
+    
+    /// This method will observer if SignedIn/Login has finished and will dismiss Safari, sending to logged area.
     private func setupObservers() {
         NotificationCenter.default.observeOnce(forName: .TraktSignedIn) { [weak self] _ in
             self?.dismiss(animated: true, completion: {
@@ -39,7 +52,13 @@ class HomeViewController: UIViewController {
         }
     }
     
-    @IBAction private func presentLogIn() {
+    
+    // -------------      -------------
+    // MARK: IBActions
+    // -------------      -------------
+    
+    /// Add SFSafariViewController to authenticate.
+    @IBAction internal func presentLogIn() {
         guard let oauthURL = TraktManager.sharedManager.oauthURL else { return }
 
         let traktAuth = SFSafariViewController(url: oauthURL)

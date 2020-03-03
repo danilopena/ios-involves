@@ -11,8 +11,8 @@ import TraktKit
 
 class ListTableCell: UITableViewCell {
 
-    @IBOutlet weak var name: UILabel!
-    @IBOutlet weak var countShows: UILabel!
+    @IBOutlet weak var name:       GrayLabel!
+    @IBOutlet weak var countShows: GrayLabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()

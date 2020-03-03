@@ -24,6 +24,7 @@ enum ItemTypeEnum: String {
         }
     }
     
+    /// Based on type, will present a specific image.
     func getImage() -> UIImage {
         switch self {
         case .show:

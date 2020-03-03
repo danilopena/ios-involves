@@ -27,7 +27,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                        clientSecret: Constants.clientSecret,
                                        redirectURI:  Constants.redirectURI,
                                        staging: true)
+        
+        navigationBarStyle()
+        
         return true
+    }
+    
+    func navigationBarStyle() {
+        UINavigationBar.appearance().barTintColor = Color.red
+        UINavigationBar.appearance().tintColor = .white
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        UINavigationBar.appearance().isTranslucent = false
     }
 
     // MARK: UISceneSession Lifecycle

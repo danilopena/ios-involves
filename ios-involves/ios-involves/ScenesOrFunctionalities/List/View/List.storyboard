@@ -26,7 +26,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="140"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Z5-hT-mc0">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Z5-hT-mc0" customClass="GrayLabel" customModule="ios_involves" customModuleProvider="target">
                                                     <rect key="frame" x="15" y="10" width="379" height="34"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="34" id="ODx-lK-eeY"/>
@@ -34,8 +34,14 @@
                                                     <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="22"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isBolded" value="YES"/>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                            <color key="value" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B40-BM-87J">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B40-BM-87J" customClass="GrayLabel" customModule="ios_involves" customModuleProvider="target">
                                                     <rect key="frame" x="15" y="54" width="379" height="26"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="26" id="L9V-AW-THW"/>
@@ -43,12 +49,22 @@
                                                     <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                            <color key="value" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="emf-x8-zFr">
-                                                    <rect key="frame" x="63" y="99.5" width="331" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="emf-x8-zFr" customClass="GrayLabel" customModule="ios_involves" customModuleProvider="target">
+                                                    <rect key="frame" x="63" y="100" width="331" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                            <color key="value" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eh5-7G-QPN">
                                                     <rect key="frame" x="15" y="90" width="40" height="40"/>
@@ -97,7 +113,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4f9-Bf-1di"/>
                     </view>
-                    <navigationItem key="navigationItem" id="9ub-wJ-RJT"/>
+                    <navigationItem key="navigationItem" id="9ub-wJ-RJT">
+                        <barButtonItem key="backBarButtonItem" title=" " id="hwU-Vo-a0p"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="uAo-Yf-ECi" id="XJv-fz-zO6"/>
                         <segue destination="g42-Yh-Pk9" kind="show" identifier="sendToDetailShow" id="0dK-zU-0qs"/>
@@ -116,17 +134,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jmu-qi-8OY">
-                                <rect key="frame" x="0.0" y="251" width="414" height="1"/>
-                                <color key="backgroundColor" red="0.17254901959999999" green="0.73725490199999999" blue="0.91372549020000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="0.0" y="321" width="414" height="1"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="hXC-bg-LvF"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kNU-k1-DP5">
-                                <rect key="frame" x="16" y="301" width="382" height="19.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kNU-k1-DP5" customClass="GrayLabel" customModule="ios_involves" customModuleProvider="target">
+                                <rect key="frame" x="16" y="378.5" width="382" height="19.5"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                        <color key="value" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="mna-AR-FLn">
                                 <rect key="frame" x="16" y="104" width="382" height="131"/>
@@ -140,7 +163,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qr0-hT-y5A">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qr0-hT-y5A" customClass="GrayLabel" customModule="ios_involves" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="42" width="382" height="26"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="26" id="nze-oy-TcN"/>
@@ -148,12 +171,22 @@
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                <color key="value" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hLh-Ik-IOn">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hLh-Ik-IOn" customClass="GrayLabel" customModule="ios_involves" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="76" width="382" height="21"/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                <color key="value" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="02e-7l-QMf">
                                         <rect key="frame" x="0.0" y="105" width="382" height="26"/>
@@ -167,46 +200,64 @@
                                 </subviews>
                             </stackView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="cr8-1V-zIS">
-                                <rect key="frame" x="16" y="360" width="382" height="464"/>
+                                <rect key="frame" x="16" y="437.5" width="382" height="386.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NmL-iz-UIu">
-                                <rect key="frame" x="16" y="330.5" width="382" height="19.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NmL-iz-UIu" customClass="GrayLabel" customModule="ios_involves" customModuleProvider="target">
+                                <rect key="frame" x="16" y="408" width="382" height="19.5"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                        <color key="value" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </label>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="s5K-Kd-Qnj">
-                                <rect key="frame" x="188.5" y="383" width="37" height="37"/>
+                                <rect key="frame" x="188.5" y="453" width="37" height="37"/>
                             </activityIndicatorView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Srs-Ab-hpJ">
-                                <rect key="frame" x="16" y="260.5" width="382" height="25"/>
+                                <rect key="frame" x="16" y="338" width="382" height="25"/>
                                 <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="19"/>
                                 <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oxR-SU-E1I" customClass="RoundedButton" customModule="ios_involves" customModuleProvider="target">
+                                <rect key="frame" x="48" y="251" width="318" height="54"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="3Cp-LR-N3y"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="showSeasonsAndEpisodes" destination="g42-Yh-Pk9" eventType="touchUpInside" id="QKR-wW-0hp"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="dmS-8w-mhH" firstAttribute="trailing" secondItem="NmL-iz-UIu" secondAttribute="trailing" constant="16" id="2nY-Ef-CtT"/>
+                            <constraint firstItem="oxR-SU-E1I" firstAttribute="trailing" secondItem="02e-7l-QMf" secondAttribute="trailing" constant="-32" id="7oK-QV-G67"/>
                             <constraint firstItem="kNU-k1-DP5" firstAttribute="top" secondItem="Srs-Ab-hpJ" secondAttribute="bottom" constant="15.5" id="8xY-71-nlI"/>
                             <constraint firstAttribute="trailing" secondItem="jmu-qi-8OY" secondAttribute="trailing" id="Buz-ks-Lnf"/>
                             <constraint firstItem="mna-AR-FLn" firstAttribute="leading" secondItem="dmS-8w-mhH" secondAttribute="leading" constant="16" id="HIm-be-DRK"/>
                             <constraint firstItem="NmL-iz-UIu" firstAttribute="leading" secondItem="dmS-8w-mhH" secondAttribute="leading" constant="16" id="JCD-Nh-03x"/>
                             <constraint firstItem="NmL-iz-UIu" firstAttribute="top" secondItem="kNU-k1-DP5" secondAttribute="bottom" constant="10" id="JlU-Qa-qx1"/>
-                            <constraint firstItem="Srs-Ab-hpJ" firstAttribute="top" secondItem="jmu-qi-8OY" secondAttribute="bottom" constant="8.5" id="KMj-GJ-KkA"/>
+                            <constraint firstItem="Srs-Ab-hpJ" firstAttribute="top" secondItem="jmu-qi-8OY" secondAttribute="bottom" constant="16" id="KMj-GJ-KkA"/>
                             <constraint firstItem="s5K-Kd-Qnj" firstAttribute="top" secondItem="jmu-qi-8OY" secondAttribute="bottom" constant="131" id="OMC-ON-TNv"/>
                             <constraint firstItem="cr8-1V-zIS" firstAttribute="top" secondItem="NmL-iz-UIu" secondAttribute="bottom" constant="10" id="S0a-Hv-L4x"/>
                             <constraint firstItem="dmS-8w-mhH" firstAttribute="trailing" secondItem="Srs-Ab-hpJ" secondAttribute="trailing" constant="16" id="UdP-hC-M8L"/>
+                            <constraint firstItem="oxR-SU-E1I" firstAttribute="top" secondItem="mna-AR-FLn" secondAttribute="bottom" constant="16" id="akV-yB-AI2"/>
+                            <constraint firstItem="oxR-SU-E1I" firstAttribute="leading" secondItem="02e-7l-QMf" secondAttribute="leading" constant="32" id="blP-a6-aKu"/>
+                            <constraint firstItem="jmu-qi-8OY" firstAttribute="top" secondItem="oxR-SU-E1I" secondAttribute="bottom" constant="16" id="dtM-Da-3PO"/>
                             <constraint firstItem="dmS-8w-mhH" firstAttribute="trailing" secondItem="cr8-1V-zIS" secondAttribute="trailing" constant="16" id="i0U-vd-GFk"/>
                             <constraint firstItem="Srs-Ab-hpJ" firstAttribute="leading" secondItem="dmS-8w-mhH" secondAttribute="leading" constant="16" id="lJT-P7-Mn1"/>
                             <constraint firstItem="jmu-qi-8OY" firstAttribute="leading" secondItem="d3t-T1-DWW" secondAttribute="leading" id="nbV-fM-YWP"/>
                             <constraint firstItem="dmS-8w-mhH" firstAttribute="bottom" secondItem="cr8-1V-zIS" secondAttribute="bottom" constant="38" id="o11-V8-ARS"/>
                             <constraint firstItem="dmS-8w-mhH" firstAttribute="trailing" secondItem="mna-AR-FLn" secondAttribute="trailing" constant="16" id="tXF-BV-OGn"/>
-                            <constraint firstItem="jmu-qi-8OY" firstAttribute="top" secondItem="mna-AR-FLn" secondAttribute="bottom" constant="16" id="uf7-8K-fWX"/>
                             <constraint firstItem="dmS-8w-mhH" firstAttribute="trailing" secondItem="kNU-k1-DP5" secondAttribute="trailing" constant="16" id="uhU-zR-KIA"/>
                             <constraint firstItem="cr8-1V-zIS" firstAttribute="leading" secondItem="dmS-8w-mhH" secondAttribute="leading" constant="16" id="vGj-48-UXw"/>
                             <constraint firstItem="mna-AR-FLn" firstAttribute="top" secondItem="dmS-8w-mhH" secondAttribute="top" constant="16" id="xWF-5C-drK"/>
@@ -215,7 +266,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dmS-8w-mhH"/>
                     </view>
-                    <navigationItem key="navigationItem" id="zuX-dV-fCO"/>
+                    <navigationItem key="navigationItem" id="zuX-dV-fCO">
+                        <barButtonItem key="backBarButtonItem" title=" " id="gk9-PI-65n"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="episodeActivityIndicator" destination="s5K-Kd-Qnj" id="ejH-Xb-aSf"/>
                         <outlet property="episodeDate" destination="NmL-iz-UIu" id="S01-8W-Zw8"/>
@@ -225,12 +278,139 @@
                         <outlet property="numberOfSeasons" destination="hLh-Ik-IOn" id="UoY-HM-1OU"/>
                         <outlet property="orientationEpisode" destination="Srs-Ab-hpJ" id="668-3v-pKb"/>
                         <outlet property="percentageWatched" destination="02e-7l-QMf" id="aEH-cu-SWc"/>
+                        <outlet property="seasonAndEpisodes" destination="oxR-SU-E1I" id="o1I-rc-Vkx"/>
+                        <outlet property="separatorView" destination="jmu-qi-8OY" id="mfU-vy-Ngd"/>
                         <outlet property="year" destination="Qr0-hT-y5A" id="Bht-c4-cv3"/>
+                        <segue destination="wOV-6A-QY7" kind="show" identifier="sendToSeasonsAndEpisodes" id="TMl-id-rrE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kAJ-Jb-oi2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4869.5652173913049" y="-186.16071428571428"/>
+        </scene>
+        <!--Show Seasons And Episodes Controller-->
+        <scene sceneID="g7G-Vu-3r6">
+            <objects>
+                <viewController id="wOV-6A-QY7" customClass="ShowSeasonsAndEpisodesController" customModule="ios_involves" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Q3U-8V-Csa">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="34" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rZA-mO-Vyk">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="episodeCell" rowHeight="100" id="Hg0-7c-Jc5" customClass="EpisodeTableCell" customModule="ios_involves" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Hg0-7c-Jc5" id="NOo-lj-oM3">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v5o-Xg-grC" customClass="GrayLabel" customModule="ios_involves" customModuleProvider="target">
+                                                    <rect key="frame" x="20" y="14" width="252" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="afl-dl-9wc"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                            <color key="value" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fyd-8e-WCy" customClass="GrayLabel" customModule="ios_involves" customModuleProvider="target">
+                                                    <rect key="frame" x="20" y="45" width="252" height="41"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                            <color key="value" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eDk-O5-sWA" customClass="RoundedButton" customModule="ios_involves" customModuleProvider="target">
+                                                    <rect key="frame" x="288" y="49" width="106" height="35"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="106" id="Rkp-NG-O6H"/>
+                                                        <constraint firstAttribute="height" constant="35" id="Wme-HO-FOc"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <connections>
+                                                        <action selector="watch:" destination="Hg0-7c-Jc5" eventType="touchUpInside" id="G2g-Oo-Aga"/>
+                                                    </connections>
+                                                </button>
+                                                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="OZq-J0-1I9">
+                                                    <rect key="frame" x="331" y="56.5" width="20" height="20"/>
+                                                </activityIndicatorView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v9l-iV-d1l" customClass="GrayLabel" customModule="ios_involves" customModuleProvider="target">
+                                                    <rect key="frame" x="288" y="14" width="106" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                            <color key="value" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="OZq-J0-1I9" firstAttribute="centerX" secondItem="eDk-O5-sWA" secondAttribute="centerX" id="1SR-bB-hxw"/>
+                                                <constraint firstItem="Fyd-8e-WCy" firstAttribute="top" secondItem="v5o-Xg-grC" secondAttribute="bottom" constant="10" id="6n4-Du-RyX"/>
+                                                <constraint firstItem="v9l-iV-d1l" firstAttribute="leading" secondItem="v5o-Xg-grC" secondAttribute="trailing" constant="16" id="7nI-EV-6rC"/>
+                                                <constraint firstItem="v5o-Xg-grC" firstAttribute="top" secondItem="NOo-lj-oM3" secondAttribute="top" constant="14" id="AJx-Bk-0Qv"/>
+                                                <constraint firstAttribute="bottom" secondItem="eDk-O5-sWA" secondAttribute="bottom" constant="16" id="LCq-YK-Kv4"/>
+                                                <constraint firstItem="Fyd-8e-WCy" firstAttribute="leading" secondItem="NOo-lj-oM3" secondAttribute="leading" constant="20" id="NIa-2i-SKE"/>
+                                                <constraint firstItem="eDk-O5-sWA" firstAttribute="top" secondItem="v9l-iV-d1l" secondAttribute="bottom" constant="14" id="Qut-zf-wO2"/>
+                                                <constraint firstItem="eDk-O5-sWA" firstAttribute="leading" secondItem="Fyd-8e-WCy" secondAttribute="trailing" constant="16" id="RYe-wM-pP1"/>
+                                                <constraint firstItem="v5o-Xg-grC" firstAttribute="leading" secondItem="NOo-lj-oM3" secondAttribute="leading" constant="20" id="XTA-Al-0Rz"/>
+                                                <constraint firstAttribute="trailing" secondItem="eDk-O5-sWA" secondAttribute="trailing" constant="20" id="Zln-Hc-XIX"/>
+                                                <constraint firstAttribute="trailing" secondItem="v9l-iV-d1l" secondAttribute="trailing" constant="20" id="cGA-uV-7lC"/>
+                                                <constraint firstItem="v9l-iV-d1l" firstAttribute="top" secondItem="NOo-lj-oM3" secondAttribute="top" constant="14" id="dcD-VG-f0i"/>
+                                                <constraint firstItem="eDk-O5-sWA" firstAttribute="leading" secondItem="v5o-Xg-grC" secondAttribute="trailing" constant="16" id="xUT-0r-116"/>
+                                                <constraint firstAttribute="bottom" secondItem="Fyd-8e-WCy" secondAttribute="bottom" constant="14" id="yMP-PH-PJW"/>
+                                                <constraint firstItem="OZq-J0-1I9" firstAttribute="centerY" secondItem="eDk-O5-sWA" secondAttribute="centerY" id="zZN-T8-vwI"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="activityIndicator" destination="OZq-J0-1I9" id="3Yy-j6-viw"/>
+                                            <outlet property="episodeNumber" destination="v5o-Xg-grC" id="hAw-fp-qtF"/>
+                                            <outlet property="watch" destination="eDk-O5-sWA" id="oww-ch-kiC"/>
+                                            <outlet property="watchOrientation" destination="v9l-iV-d1l" id="UAE-OV-fsz"/>
+                                            <outlet property="watched" destination="Fyd-8e-WCy" id="O49-U5-9kB"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="wOV-6A-QY7" id="NmA-iX-Uvx"/>
+                                    <outlet property="delegate" destination="wOV-6A-QY7" id="9Tu-dT-WmN"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="qiy-ZP-o7N" firstAttribute="bottom" secondItem="rZA-mO-Vyk" secondAttribute="bottom" id="DM3-KE-BLG"/>
+                            <constraint firstItem="qiy-ZP-o7N" firstAttribute="trailing" secondItem="rZA-mO-Vyk" secondAttribute="trailing" id="Ehc-33-mb2"/>
+                            <constraint firstItem="rZA-mO-Vyk" firstAttribute="leading" secondItem="qiy-ZP-o7N" secondAttribute="leading" id="gda-pU-hbU"/>
+                            <constraint firstItem="rZA-mO-Vyk" firstAttribute="top" secondItem="qiy-ZP-o7N" secondAttribute="top" id="lN0-M9-ScV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="qiy-ZP-o7N"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="U8G-kV-h8Y">
+                        <barButtonItem key="backBarButtonItem" title=" " id="Vag-mH-WZj"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="rZA-mO-Vyk" id="muu-hA-NAO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ViZ-re-DW6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5786.9565217391309" y="-186.16071428571428"/>
         </scene>
         <!--List Controller-->
         <scene sceneID="loz-N1-mhL">
@@ -251,7 +431,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="383" height="84"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Xw-Cj-rgT">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Xw-Cj-rgT" customClass="GrayLabel" customModule="ios_involves" customModuleProvider="target">
                                                     <rect key="frame" x="15" y="10" width="348" height="34"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="34" id="8NH-0c-azo"/>
@@ -259,8 +439,14 @@
                                                     <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="22"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                            <color key="value" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isBolded" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8zE-cO-CLU">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8zE-cO-CLU" customClass="GrayLabel" customModule="ios_involves" customModuleProvider="target">
                                                     <rect key="frame" x="15" y="48" width="348" height="26"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="26" id="KAd-0s-UwU"/>
@@ -268,6 +454,11 @@
                                                     <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                            <color key="value" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </label>
                                             </subviews>
                                             <constraints>
@@ -283,7 +474,7 @@
                                         <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <connections>
                                             <outlet property="countShows" destination="8zE-cO-CLU" id="tR8-kN-4Ln"/>
-                                            <outlet property="name" destination="2Xw-Cj-rgT" id="apu-qO-WEo"/>
+                                            <outlet property="name" destination="2Xw-Cj-rgT" id="BSe-bz-B0X"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -314,7 +505,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cZs-HZ-SlH"/>
                     </view>
-                    <navigationItem key="navigationItem" id="8P2-it-Nnk"/>
+                    <navigationItem key="navigationItem" id="8P2-it-Nnk">
+                        <barButtonItem key="backBarButtonItem" title=" " id="odu-To-s6C"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="orientation" destination="fE6-eV-fc4" id="p1V-N8-YOi"/>
                         <outlet property="tableView" destination="eQO-d4-jhb" id="44a-dV-uHW"/>

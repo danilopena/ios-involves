@@ -10,9 +10,9 @@ import TraktKit
 
 class ListDetailTableCell: UITableViewCell {
 
-    @IBOutlet weak var name:     UILabel!
-    @IBOutlet weak var year:     UILabel!
-    @IBOutlet weak var type:     UILabel!
+    @IBOutlet weak var name:     GrayLabel!
+    @IBOutlet weak var year:     GrayLabel!
+    @IBOutlet weak var type:     GrayLabel!
     @IBOutlet weak var typeIcon: UIImageView!
 
     override func awakeFromNib() {

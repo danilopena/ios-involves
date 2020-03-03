@@ -14,4 +14,5 @@ enum SegueIdentifier {
     // Lists
     static let sendToListItems  = "sendToListItems"
     static let sendToDetailShow = "sendToDetailShow"
+    static let sendToSeasonsAndEpisodes = "sendToSeasonsAndEpisodes"
 }

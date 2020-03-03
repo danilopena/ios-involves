@@ -11,6 +11,8 @@
 "show.title"        = "Detalhes da série";
 "tabBar.list.title" = "Listas";
 
+// List
+
 "list.name"         = "Nome: ";
 "list.showsCount"   = "Número de séries/filmes na lista: ";
 "list.orientation"  = "Aqui você poderá ver todas as suas listas customizadas e também, os detalhes de cada uma.";
@@ -18,7 +20,7 @@
 "list.detail.name"  = "Nome: ";
 "list.detail.year"  = "Ano: ";
 "list.detail.type"  = "Tipo: ";
-
+"list.detail.seasonsAndEpisodes" = "Temporadas e episódios";
 // Item
 "title.movie"       = "Filme";
 "title.show"        = "Série";
@@ -34,4 +36,11 @@
 
 "error.message.unknown" = "Ainda não temos os detalhes além de séries, já estamos trabalhando nisso para melhor atendê-lo.";
 
-
+// Seasons and Episodes
+"seasonsAndEpisodes.title"       = "Temporadas e episódios";
+"seasonsAndEpisodes.season"      = " Temporada";
+"seasonsAndEpisodes.episode"     = "Episódio: ";
+"seasonsAndEpisodes.hasWatched"  = "Episódio assistido ✓";
+"seasonsAndEpisodes.notWatched"  = "Você ainda não assistiu esse episódio";
+"seasonsAndEpisodes.markWatched" = "Sim!";
+"seasonsAndEpisodes.watchOrientation" = "Já assistiu?";

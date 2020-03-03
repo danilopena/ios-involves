@@ -11,26 +11,43 @@ import TraktKit
 
 class ListController: UIViewController {
 
+    
+    // -------------      -------------
+    // MARK: IBOutlets
+    // -------------      -------------
+
     @IBOutlet weak var tableView:   UITableView!
     @IBOutlet weak var orientation: UILabel!
+    
+    // -------------      -------------
+    // MARK: Variables
+    // -------------      -------------
     
     private var listViewModel: ListViewModel!
     var indexOfSelectedList: Int!
     
+    // -------------      -------------
+    // MARK: Native Functions
+    // -------------      -------------
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        listViewModel  = ListViewModel(delegate: self)
+        listViewModel = ListViewModel(delegate: self)
         listViewModel.fetchLists()
         
         setup()
     }
     
+    // -------------      -------------
+    // MARK: Auxiliar Functions
+    // -------------      -------------
+    
     func setup () {
-        navigationItem.title = Localizable.controllerTitle.localized
-        navigationController?.tabBarItem.title = Localizable.tabBarTitle.localized
+        navigationItem.title = listViewModel.controllerTitleString
+        navigationController?.tabBarItem.title = listViewModel.tabBarTitleString
         tableView.tableFooterView = UITableViewHeaderFooterView()
-        orientation.text = Localizable.orientationList.localized
+        orientation.text = listViewModel.orientationListTitleString
     }
 
     // MARK: - Navigation
@@ -46,12 +63,6 @@ class ListController: UIViewController {
 private extension ListController {
     private enum Constants {
         static let cellIdenfier    = "listCell"
-    }
-    
-    private enum Localizable {
-        static let controllerTitle = "list.title"
-        static let tabBarTitle     = "tabBar.list.title"
-        static let orientationList = "list.orientation"
     }
 }
 

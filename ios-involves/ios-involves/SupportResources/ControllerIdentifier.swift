@@ -11,5 +11,5 @@ import UIKit
 enum ControllerIdentifier {
     static let homeViewController       = "HomeViewController"
     static let listController           = "ListController"
-    static let listDetailController     = "ListDetilController"
+    static let listDetailController     = "ListDetailController"
 }

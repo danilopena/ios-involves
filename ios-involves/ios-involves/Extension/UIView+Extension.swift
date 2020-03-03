@@ -9,6 +9,7 @@
 import UIKit
 
 extension UIView {
+    
     func makeCircle() {
         self.layer.cornerRadius = self.frame.width/2
     }

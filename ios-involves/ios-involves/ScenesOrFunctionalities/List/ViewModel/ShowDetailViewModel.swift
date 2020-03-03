@@ -9,13 +9,10 @@
 import UIKit
 import TraktKit
 
-protocol StatusDelegate: class {
-    func loaded(status: Status)
-}
-
 protocol ShowDetailViewModelDelegate: class {
     func loaded(status: Status)
     func loadedNextEpisode(status: Status)
+    func loadedShowForSeasonsAndEpisodes(status: Status)
 }
 
 final class ShowDetailViewModel {
@@ -36,6 +33,19 @@ final class ShowDetailViewModel {
                     self?.show = result
                     self?.delegate?.loaded(status: .success)
                     break
+                case .error(let error):
+                    self?.delegate?.loaded(status: .failed(error: "Failed to get your lists profile: \(String(describing: error?.localizedDescription))"))
+                    break
+            }
+        }
+    }
+    
+    func fetchDetailForListSeasonsAndEpisodes(id: Int) {
+        TraktManager.sharedManager.getShowWatchedProgress(showID: "\(id)") { [weak self] (result) in
+            switch result {
+                case .success(let result):
+                    self?.show = result
+                    self?.delegate?.loadedShowForSeasonsAndEpisodes(status: .success)
                 case .error(let error):
                     self?.delegate?.loaded(status: .failed(error: "Failed to get your lists profile: \(String(describing: error?.localizedDescription))"))
                     break
@@ -69,5 +79,16 @@ final class ShowDetailViewModel {
     
     func makePercentageWatchedCalc() -> String {
         return "\((show.completed * 100) / show.aired)" + "%"
+    }
+    
+    func getAiredDateFormated(episode: TraktEpisode) -> String {
+        guard let date = episode.firstAired else {
+            return ""
+        }
+
+        let dateFormatterPrint = DateFormatter()
+        dateFormatterPrint.dateFormat = "dd/MM/yyyy HH:mm:ss"
+
+        return dateFormatterPrint.string(from: date)
     }
 }

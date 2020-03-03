@@ -32,7 +32,6 @@ extension NotificationCenter {
                                object: obj,
                                queue: queue) { [weak self] (notification) in
             defer {
-                // Remove observer, so closure will be executed just once
                 self?.removeObserver(observer!)
             }
 

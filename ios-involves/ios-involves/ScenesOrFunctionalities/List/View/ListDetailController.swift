@@ -11,18 +11,37 @@ import TraktKit
 
 class ListDetailController: UIViewController {
 
+    // -------------      -------------
+    // MARK: IBOutlets
+    // -------------      -------------
+    
     @IBOutlet weak var tableView: UITableView!
     
+    // -------------      -------------
+    // MARK: Variables
+    // -------------      -------------
+    
     var listToDetail: TraktList!
+    
     var showIndexToDetail: Int!
     private var listDetailViewModel: ListDetailViewModel!
 
+    // -------------      -------------
+    // MARK: Native Functions
+    // -------------      -------------
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         listDetailViewModel = ListDetailViewModel(delegate: self)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         listDetailViewModel.fetchListDetail(list: listToDetail)
         navigationItem.title = listToDetail.name
+    }
+    
+    func setup() {
         tableView.tableFooterView = UITableViewHeaderFooterView()
     }
 

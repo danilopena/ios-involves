@@ -16,9 +16,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jxc-Qc-Hie" customClass="RoundedButton" customModule="ios_involves" customModuleProvider="target">
-                                <rect key="frame" x="77" y="423" width="260" height="50"/>
+                                <rect key="frame" x="77" y="423" width="260" height="54"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="6np-7Z-Q4Y"/>
+                                    <constraint firstAttribute="height" constant="54" id="6np-7Z-Q4Y"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="260" id="QpM-3h-9q9"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="19"/>
@@ -67,7 +67,6 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="hDZ-YK-jPm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="1lH-B9-kCR"/>
-                            <constraint firstItem="Jxc-Qc-Hie" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="EyO-QX-8Rv"/>
                             <constraint firstAttribute="trailing" secondItem="hDZ-YK-jPm" secondAttribute="trailing" constant="16" id="Lha-gG-CPK"/>
                             <constraint firstItem="Jxc-Qc-Hie" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MfO-9e-3nm"/>
                             <constraint firstItem="hDZ-YK-jPm" firstAttribute="top" secondItem="Knl-l8-F9G" secondAttribute="bottom" constant="28.5" id="cC6-Ia-WG1"/>

@@ -9,6 +9,8 @@
 import UIKit
 
 extension URL {
+    
+    /// Transform URL in a Dictionary without unwanted characters
     func queryDict() -> [String: Any] {
         var info: [String: Any] = [String: Any]()
         if let queryString = self.query{

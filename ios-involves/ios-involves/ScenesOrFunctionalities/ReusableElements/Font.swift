@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum Fonts {
-    static let futuraBold = "Futura-Bold"
-    static let futuraMedium = "Futura-Medium"
+enum Font {
+    static let futuraMedium = UIFont(name: "Futura-Medium", size: 17)
+    static let futuraBold = UIFont(name: "Futura-Bold", size: 17)
 }

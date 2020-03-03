@@ -7,6 +7,8 @@
 //
 
 import XCTest
+import TraktKit
+import SafariServices
 
 @testable import ios_involves
 

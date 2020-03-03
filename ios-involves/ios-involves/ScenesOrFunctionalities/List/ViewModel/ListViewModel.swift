@@ -9,7 +9,6 @@
 import UIKit
 import TraktKit
 
-
 final class ListViewModel {
     
     private weak var delegate: StatusDelegate?
@@ -29,5 +28,25 @@ final class ListViewModel {
                 self?.delegate?.loaded(status: .failed(error: "Failed to get your lists profile: \(String(describing: error?.localizedDescription))"))
             }
         }
+    }
+}
+
+extension ListViewModel {
+    enum Localizable {
+        static let controllerTitle = "list.title"
+        static let tabBarTitle     = "tabBar.list.title"
+        static let orientationList = "list.orientation"
+    }
+        
+    var controllerTitleString: String {
+        return Localizable.controllerTitle.localized
+    }
+
+    var tabBarTitleString: String {
+        return Localizable.tabBarTitle.localized
+    }
+
+    var orientationListTitleString: String {
+        return Localizable.orientationList.localized
     }
 }

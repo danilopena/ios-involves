@@ -10,14 +10,6 @@ import XCTest
 
 class ColorTests: XCTestCase {
 
-    override func setUp() {
-        
-    }
-
-    override func tearDown() {
-    
-    }
-
     func testColorsHex() {
         XCTAssertTrue(hexStringFromColor(color: Color.gray)   == "#424242")
         XCTAssertTrue(hexStringFromColor(color: Color.red)    == "#FD494A")

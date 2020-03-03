@@ -12,4 +12,5 @@ enum ControllerIdentifier {
     static let homeViewController       = "HomeViewController"
     static let listController           = "ListController"
     static let listDetailController     = "ListDetailController"
+    static let showDetailController     = "ShowDetailController"
 }

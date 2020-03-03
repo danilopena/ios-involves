@@ -7,7 +7,7 @@ As instruções para uso do projeto são muitos simples. Foi escolhido o cocoapo
 # Pontos importantes
 
   - O layout é simples, mas foi focado em deixar as informações claras e organizadas.
-  - Com o apoio do framework TrakKi, é executado o fluxo de OAuth2. O app está apontando para o ambiente de Staging do Trakt.tv.
+  - Com o apoio do framework TrakKit, é executado o fluxo de OAuth2. O app está apontando para o ambiente de Staging do Trakt.tv.
   - Os testes unitários podem ser rodados escolhendo o **Scheme de Test**.
   - Alguns elementos simples e reutilizáveis foram desenvolvidos e encontram-se na pasta **ReusableElements**
   
@@ -28,11 +28,11 @@ As instruções para uso do projeto são muitos simples. Foi escolhido o cocoapo
         Consta a informação do próximo ou do último no detalhamento de uma série.
   - **Marcar como assistido um episódio** ✅
        
-       Para marcar como lido, na tela de detalhamento, selecione o botão **Temporadas e episódios** e será redirecionado para uma listagem de temporada se episódios, onde basta responder a pergunta **Já assistiu?** que você estará marcando como assistido.
+        Para marcar como lido, na tela de detalhamento, selecione o botão **Temporadas e episódios** e será redirecionado para uma listagem de temporada se episódios, onde basta responder a pergunta **Já assistiu?** que você estará marcando como assistido.
 
 # Arquitetura
 
-Escolhi utilizar MVVM como padrão juntamente com MARK's e "extensions" para organização do código. Forma feitos alguns comentários em métodos cujo entendimento poderia ser um pouco mais complexo. 
+Escolhi utilizar MVVM como padrão juntamente com MARK's e "extensions" para organização do código. Foram feitos alguns comentários em métodos cujo entendimento poderia se tornar um pouco mais complicado. 
 
 As strings e possíveis traduções para outras línguas, encontram-se no arquivo Localizable.strings. Essa abordagem visa facilitar a manutenção em caso de troca de textos e padronizar a forma de internacionalização do app, caso necessário.
 

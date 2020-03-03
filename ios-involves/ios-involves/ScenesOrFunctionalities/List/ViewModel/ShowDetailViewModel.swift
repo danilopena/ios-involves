@@ -21,6 +21,7 @@ final class ShowDetailViewModel {
     var show:        TraktShowWatchedProgress!
     var nextEpisode: TraktEpisode!
     var lastEpisode: TraktEpisode!
+    let dateFormatString = "dd/MM/yyyy HH:mm:ss"
 
     init(delegate: ShowDetailViewModelDelegate) {
         self.delegate = delegate
@@ -87,7 +88,7 @@ final class ShowDetailViewModel {
         }
 
         let dateFormatterPrint = DateFormatter()
-        dateFormatterPrint.dateFormat = "dd/MM/yyyy HH:mm:ss"
+        dateFormatterPrint.dateFormat = dateFormatString
 
         return dateFormatterPrint.string(from: date)
     }

@@ -20,11 +20,11 @@ class ShowDetailController: UIViewController {
     @IBOutlet private weak var year:              UILabel!
     @IBOutlet private weak var numberOfSeasons:   UILabel!
     @IBOutlet private weak var percentageWatched: UILabel!
-    @IBOutlet private weak var seasonAndEpisodes: RoundedButton!
-    @IBOutlet private weak var separatorView:     UIView!
+    @IBOutlet weak var seasonAndEpisodes: RoundedButton!
+    @IBOutlet weak var separatorView:     UIView!
     
     /// Next/Last episode informations
-    @IBOutlet private weak var orientationEpisode: UILabel!
+    @IBOutlet weak var orientationEpisode: UILabel!
     @IBOutlet private weak var episodeTitle:       UILabel!
     @IBOutlet private weak var episodeDate:        UILabel!
     @IBOutlet private weak var episodeOverview:    UITextView!
@@ -45,7 +45,8 @@ class ShowDetailController: UIViewController {
         super.viewDidLoad()
                 
         showDetailViewModel = ShowDetailViewModel(delegate: self)
-        seasonAndEpisodes.setTitle(showDetailViewModel.seasonsAndEpisodesString, for: .normal)
+        
+        setupLayout()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -57,12 +58,16 @@ class ShowDetailController: UIViewController {
     // MARK: Auxiliar Functions
     // -------------      -------------
     
-    /// This method will present general informations of the show 
-    func setup() {
-        navigationItem.title = showDetailViewModel.controllerTitleString
+    func setupLayout() {
         separatorView.backgroundColor = Color.purple
         orientationEpisode.textColor = Color.purple
         
+        seasonAndEpisodes.setTitle(showDetailViewModel.seasonsAndEpisodesString, for: .normal)
+    }
+    
+    /// This method will present general informations of the show 
+    func setup() {
+        navigationItem.title = showDetailViewModel.controllerTitleString
         // Show infos
         name.text = showDetailViewModel.showDetailNameString + showToDetail.title
         year.text = showDetailViewModel.showDetailYearString + "\(showToDetail.year ?? 0)"

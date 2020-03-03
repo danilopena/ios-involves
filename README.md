@@ -34,9 +34,9 @@ As instruções para uso do projeto são muitos simples. Foi escolhido o cocoapo
 
 Escolhi utilizar MVVM como padrão juntamente com MARK's e "extensions" para organização do código. Forma feitos alguns comentários em métodos cujo entendimento poderia ser um pouco mais complexo. 
 
-As strings e possível tradução para outras línguas, encontra-sem no arquivo Localizable.strings. Essa abordagem visa facilitar a manutenção em caso de troca de textos e padronizar a forma de internacionalização do app, caso necessário.
+As strings e possíveis traduções para outras línguas, encontram-se no arquivo Localizable.strings. Essa abordagem visa facilitar a manutenção em caso de troca de textos e padronizar a forma de internacionalização do app, caso necessário.
 
 Qualquer dúvida, estou à disposição:
 
-danilord.pena@gmail.com  or
+danilord.pena@gmail.com  ou
 https://www.linkedin.com/in/danilo-pena-05aa7a3a/

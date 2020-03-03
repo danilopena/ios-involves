@@ -19,12 +19,14 @@ final class ShowDetailViewModel {
 
     private weak var delegate: ShowDetailViewModelDelegate?
     var show:        TraktShowWatchedProgress!
+    var showToDetail: TraktShow!
     var nextEpisode: TraktEpisode!
     var lastEpisode: TraktEpisode!
     let dateFormatString = "dd/MM/yyyy HH:mm:ss"
 
-    init(delegate: ShowDetailViewModelDelegate) {
+    init(delegate: ShowDetailViewModelDelegate, showDetailed: TraktShow? = nil) {
         self.delegate = delegate
+        self.showToDetail = showDetailed
     }
     
     func fetchDetailShow(id: Int) {
@@ -78,7 +80,7 @@ final class ShowDetailViewModel {
         }
     }
     
-    func makePercentageWatchedCalc() -> String {
+    private func makePercentageWatchedCalc() -> String {
         return "\((show.completed * 100) / show.aired)" + "%"
     }
     
@@ -111,19 +113,19 @@ extension ShowDetailViewModel {
     }
     
     var showDetailNameString: String {
-        return Localizable.showDetailName.localized
+        return Localizable.showDetailName.localized + showToDetail.title
     }
     
     var showDetailYearString: String {
-        return Localizable.showDetailYear.localized
+        return Localizable.showDetailYear.localized + "\(showToDetail.year ?? 0)"
     }
     
     var showDetailSeasonString: String {
-        return Localizable.showDetailSeason.localized
+        return "\(show.seasons.count)" +  Localizable.showDetailSeason.localized
     }
     
     var showDetailWatchedString: String {
-        return Localizable.showDetailWatched.localized
+        return makePercentageWatchedCalc() + Localizable.showDetailWatched.localized
     }
     
     var nextEpisodeOrientationString: String {

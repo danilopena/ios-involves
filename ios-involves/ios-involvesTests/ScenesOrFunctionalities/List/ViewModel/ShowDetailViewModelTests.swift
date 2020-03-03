@@ -50,7 +50,7 @@ class ShowDetailViewModelTests: XCTestCase {
     }
     
     func testPercentageShowProgress() {
-        XCTAssert(showDetailViewModel.makePercentageWatchedCalc() == "10%")
+        XCTAssert(showDetailViewModel.showDetailWatchedString.contains("10%"))
     }
     
     func testDateFormat() {

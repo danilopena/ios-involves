@@ -7,7 +7,7 @@ As instruções para uso do projeto são muitos simples. Foi escolhido o cocoapo
 # Pontos importantes
 
   - O layout é simples, mas foi focado em deixar as informações claras e organizadas.
-  - Com o apoio do framework TrakKit, é executado o fluxo de OAuth2. O app está apontando para o ambiente de Staging do Trakt.tv.
+  - Com o apoio do framework TraktKit, é executado o fluxo de OAuth2. O app está apontando para o ambiente de Staging do Trakt.tv.
   - Os testes unitários podem ser rodados escolhendo o **Scheme de Test**.
   - Alguns elementos simples e reutilizáveis foram desenvolvidos e encontram-se na pasta **ReusableElements**
   
@@ -29,6 +29,8 @@ As instruções para uso do projeto são muitos simples. Foi escolhido o cocoapo
   - **Marcar como assistido um episódio** ✅
        
     Para marcar como lido, na tela de detalhamento, selecione o botão **Temporadas e episódios** e será redirecionado para uma listagem de temporada se episódios, onde basta responder a pergunta **Já assistiu?** que você estará marcando como assistido.
+    
+ - **Testes unitários** ✅
 
 # Arquitetura
 

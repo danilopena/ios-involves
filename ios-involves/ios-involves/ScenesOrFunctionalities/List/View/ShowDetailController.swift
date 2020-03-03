@@ -44,7 +44,7 @@ class ShowDetailController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
                 
-        showDetailViewModel = ShowDetailViewModel(delegate: self)
+        showDetailViewModel = ShowDetailViewModel(delegate: self, showDetailed: showToDetail)
         
         setupLayout()
     }
@@ -69,11 +69,10 @@ class ShowDetailController: UIViewController {
     func setup() {
         navigationItem.title = showDetailViewModel.controllerTitleString
         // Show infos
-        name.text = showDetailViewModel.showDetailNameString + showToDetail.title
-        year.text = showDetailViewModel.showDetailYearString + "\(showToDetail.year ?? 0)"
-        numberOfSeasons.text = "\(showDetailViewModel.show.seasons.count)" + showDetailViewModel.showDetailSeasonString
-        
-        percentageWatched.text = showDetailViewModel.makePercentageWatchedCalc() + showDetailViewModel.showDetailWatchedString
+        name.text = showDetailViewModel.showDetailNameString
+        year.text = showDetailViewModel.showDetailYearString
+        numberOfSeasons.text = showDetailViewModel.showDetailSeasonString        
+        percentageWatched.text = showDetailViewModel.showDetailWatchedString
     }
     
     /// This method will verify if has next episode. if true, will present the next episode if false, will present the last episode.

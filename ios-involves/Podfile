@@ -10,6 +10,9 @@ target 'ios-involves' do
 
   target 'ios-involvesTests' do
     inherit! :search_paths
+    
+    pod 'TraktKit', '~> 1.1.1'
+
     # Pods for testing
   end
 

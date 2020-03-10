@@ -71,7 +71,7 @@ class ShowDetailController: UIViewController {
         // Show infos
         name.text = showDetailViewModel.showDetailNameString
         year.text = showDetailViewModel.showDetailYearString
-        numberOfSeasons.text = showDetailViewModel.showDetailSeasonString        
+        numberOfSeasons.text = showDetailViewModel.showDetailSeasonString
         percentageWatched.text = showDetailViewModel.showDetailWatchedString
     }
     
